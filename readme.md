@@ -45,5 +45,4 @@ The above end point deletes a resort based on the id provided
 5. Within the **keys.env** file, create the below environment variables :
    - **MONGODB_QUERY_STRING** - Assign your Database Connection String to the variable
    - **PORT** - Assign 5000
-   - **FRONT_END_HOST_ADDRESS** - Assign the value **http://localhost:3000**  This is to indicate that your FRONT_END app will be runnng on PORT 3000
 6. Run application by running : **npm run dev**
