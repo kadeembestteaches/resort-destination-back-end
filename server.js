@@ -5,12 +5,14 @@ require('dotenv').config({ path: 'config/keys.env' });
 
 
 const ResortController = require("./controllers/ResortController.js");
+const UserController = require("./controllers/UserController");
 
 const app = express();
 
+
 const corsOptionsDelegate = function (req, callback) 
 {
-  const allowlist = ['http://localhost:3000', 'http://127.0.0.1:3000']
+  const allowlist = [`http://localhost:3000`, 'http://127.0.0.1:3000']
   let corsOptions;
   if (allowlist.indexOf(req.header('Origin')) !== -1) {
     corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
@@ -23,9 +25,11 @@ const corsOptionsDelegate = function (req, callback)
 //middleware
 app.use(cors(corsOptionsDelegate))
 
+
 app.use(express.json());
 
 app.use("/resorts",ResortController);
+app.use("/users",UserController);
 
 
 app.listen(process.env.PORT,()=>{
