@@ -18,7 +18,7 @@ const app = express();
 
 const corsOptionsDelegate = function (req, callback) 
 {
-  const allowlist = [`http://localhost:3000`, 'http://127.0.0.1:3000','https://practical-mirzakhani-548a06.netlify.app']
+  const allowlist = [`http://localhost:3000`, 'http://127.0.0.1:3000','https://boring-meitner-1b8850.netlify.app/']
   let corsOptions;
   if (allowlist.indexOf(req.header('Origin')) !== -1) {
     corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
